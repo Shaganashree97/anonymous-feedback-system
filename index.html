@@ -1,0 +1,68 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Type Selection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Gradient background */
+        body {
+            background: linear-gradient(45deg, #3e4e92b9, #764ba2ac);
+        }
+
+        /* Check for dark mode preference and toggle class */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(45deg, #687199ca, #8b6fa7f8);
+            }
+        }
+        .container {
+            transition: transform 0.3s ease-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05) rotateX(10deg); /* Adjust the scale and rotation as needed */
+        }
+    </style>
+    <script>
+        // Check for dark mode preference and toggle class
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="flex items-center justify-center h-screen">
+
+    <div class="container p-4 lg:p-20 bg-white rounded-full shadow-md text-center dark:bg-gray-700 w-full lg:w-auto">
+        <header class="mb-8">
+            <h1 class="text-2xl lg:text-3xl font-bold text-indigo-900 dark:text-white">User Type Selection</h1>
+        </header>
+
+        <div class="user-type-selection">
+            <form action="redirect.php" method="post" class="flex flex-col items-center">
+                <label class="mb-2">
+                    <input type="radio" name="user_type" value="admin" required class="mr-2 text-purple-700">
+                    <span class="text-xl md:text-l lg:text-xl text-purple-1000 dark:text-blue-400 hover:text-pink-900">Admin</span>
+                </label>
+                <label class="mb-2">
+                    <input type="radio" name="user_type" value="faculty" required class="mr-2 text-green-700">
+                    <span class="text-lg md:text-l lg:text-xl text-purple-1000 dark:text-blue-400 hover:text-pink-800">Faculty</span>
+                </label>
+                <label class="mb-2">
+                    <input type="radio" name="user_type" value="student" required class="mr-2 text-blue-700">
+                    <span class="text-lg md:text-l lg:text-xl text-purple-1000 dark:text-blue-400 hover:text-pink-800">Student</span>
+                </label>
+                <button type="submit" class="bg-indigo-500 text-white px-8 py-3 mt-7 rounded-md cursor-pointer transition duration-300 hover:bg-indigo-700 hover:shadow-md">
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
