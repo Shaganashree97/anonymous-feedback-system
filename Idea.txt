@@ -1,5 +1,0 @@
-Admin --> Everything
-
-Students --> Login/Register --> Enter Feedback --> Can view reply
-
-Faculty --> Login/Register --> View Feedback --> Reply to them (Option)
