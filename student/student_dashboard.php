@@ -80,6 +80,12 @@ $student_name = $student_name_row['student_name'];
                     Submit Feedback
                 </button>
             </form>
+            <!-- Logout button -->
+    <form action="student_logout.php" method="post" class="mt-4">
+        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md cursor-pointer transition duration-300 hover:bg-red-700 hover:shadow-md">
+            Logout
+        </button>
+    </form>
         </div>
     </div>
 
