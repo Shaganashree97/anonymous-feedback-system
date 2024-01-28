@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="container p-4 lg:p-20 bg-white rounded-full shadow-md text-center dark:bg-gray-700 w-full lg:w-auto">
+        <header class="mb-4">
+            <h1 class="text-2xl lg:text-3xl font-bold text-green-700 dark:text-white">Faculty Registration</h1>
+        </header>
+
+        <div class="registration-form">
+            <form action="faculty_register.php" method="post" class="flex flex-col items-center">
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Full Name:</span>
+                    <input type="text" name="faculty_name" required class="border rounded-md p-2 focus:outline-none focus:border-green-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Email:</span>
+                    <input type="email" name="faculty_mail_id" required class="border rounded-md p-2 focus:outline-none focus:border-green-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Password:</span>
+                    <input type="faculty_password" name="password" required class="border rounded-md p-2 focus:outline-none focus:border-green-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Courses Handling:</span>
+                    <select name="faculty_course_handling" required class="border rounded-md p-2 focus:outline-none focus:border-green-500">
+                        <option value="Data Structures">Data Structures</option>
+                        <option value="Discrete Mathematics">Discrete Mathematics</option>
+                        <option value="Object Oriented Programming">Object Oriented Programming</option>
+                        <option value="DataBase Management Systems">DataBase Management Systems</option>
+                        <option value="Computer Architecture">Computer Architecture</option>
+                    </select>
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Slot Number:</span>
+                    <select name="slot_number" required class="border rounded-md p-2 focus:outline-none focus:border-green-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </label>
+                <button type="submit" class="bg-green-500 text-white px-8 py-3 mt-7 rounded-md cursor-pointer transition duration-300 hover:bg-green-700 hover:shadow-md">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
