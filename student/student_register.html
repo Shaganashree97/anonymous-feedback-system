@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="container p-4 lg:p-20 bg-white rounded-full shadow-md text-center dark:bg-gray-700 w-full lg:w-auto">
+        <header class="mb-4">
+            <h1 class="text-2xl lg:text-3xl font-bold text-blue-700 dark:text-white">Student Registration</h1>
+        </header>
+
+        <div class="registration-form">
+            <form action="student_register.php" method="post" class="flex flex-col items-center">
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Roll No:</span>
+                    <input type="text" name="student_rollno" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Email:</span>
+                    <input type="email" name="student_mail_id" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Password:</span>
+                    <input type="password" name="password" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Name:</span>
+                    <input type="text" name="student_name" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Data Structures Faculty:</span>
+                    <select name="ds" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                        <option value="Devaki P">Devaki P</option>
+                        <option value="Sumathi V P">Sumathi V P</option>
+                    </select>
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Discrete Mathematics Faculty:</span>
+                    <select name="dm" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                        <option value="Ezhlarasi A">Ezhlarasi A</option>
+                        <option value="Meena K">Meena K</option>
+                    </select>
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Object Oriented Programming Faculty:</span>
+                    <select name="oops" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                        <option value="Kanagaraj G">Kanagaraj G</option>
+                        <option value="Apinaya Prethi K N">Apinaya Prethi K N</option>
+                    </select>
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Database Management Systems Faculty:</span>
+                    <select name="dbms" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                        <option value="Nithya S">Nithya S</option>
+                        <option value="Francis Jency X">Francis Jency X</option>
+                    </select>
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Computer Architecture Faculty:</span>
+                    <select name="ca" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                        <option value="Baskaran K R">Baskaran K R</option>
+                        <option value="Latha L">Latha L</option>
+                    </select>
+                </label>
+                <button type="submit" class="bg-blue-500 text-white px-8 py-3 mt-7 rounded-md cursor-pointer transition duration-300 hover:bg-blue-700 hover:shadow-md">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
