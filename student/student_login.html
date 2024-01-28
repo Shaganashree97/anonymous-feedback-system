@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="container p-4 lg:p-20 bg-white rounded-full shadow-md text-center dark:bg-gray-700 w-full lg:w-auto">
+        <header class="mb-4">
+            <h1 class="text-2xl lg:text-3xl font-bold text-blue-700 dark:text-white">Student Login</h1>
+        </header>
+
+        <div class="login-form">
+            <form action="student_login.php" method="post" class="flex flex-col items-center">
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Roll Number:</span>
+                    <input type="text" name="student_rollno" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                </label>
+                <label class="mb-2">
+                    <span class="text-gray-700 dark:text-gray-300">Password:</span>
+                    <input type="password" name="password" required class="border rounded-md p-2 focus:outline-none focus:border-blue-500">
+                </label>
+                <button type="submit" class="bg-blue-500 text-white px-8 py-3 mt-7 rounded-md cursor-pointer transition duration-300 hover:bg-blue-700 hover:shadow-md">
+                    Login
+                </button>
+            </form>
+
+            <p class="mt-4">Don't have an account? <a href="student_register.html" class="text-blue-500">Register here</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
