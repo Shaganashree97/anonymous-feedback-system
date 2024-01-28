@@ -29,9 +29,9 @@
                     <tr>
                         <th class="py-2 px-4 border-b">Name</th>
                         <th class="py-2 px-4 border-b">Mail ID</th>
-                        
                         <th class="py-2 px-4 border-b">Course Handling</th>
                         <th class="py-2 px-4 border-b">Slot Number</th>
+                        <th class="py-2 px-4 border-b">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,14 +39,15 @@
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["faculty_mail_id"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["faculty_name"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["faculty_mail_id"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["course_title"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["faculty_slot_number"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'><a href='update_faculty.php?faculty_mail_id=" . $row["faculty_mail_id"] . "' class='text-blue-500 hover:underline font-semibold'>Update</a></td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='4' class='py-2 px-4 text-center'>No records found</td></tr>";
+                        echo "<tr><td colspan='5' class='py-2 px-4 text-center'>No records found</td></tr>";
                     }
                     ?>
                 </tbody>
