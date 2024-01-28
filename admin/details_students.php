@@ -18,7 +18,7 @@
 
         <?php
         // Fetch student details from the database
-        $sql = "SELECT student_rollno, student_name, student_mail_id, course_faculty_name1, course_faculty_name2, course_faculty_name3, course_faculty_name4, course_faculty_name5 FROM student";
+        $sql = "SELECT student_rollno, student_name, student_mail_id, ds, dm, oops, dbms, ca FROM student";
         $result = $conn->query($sql);
         ?>
 
@@ -30,11 +30,12 @@
                         <th class="py-2 px-4 border-b">Roll No</th>
                         <th class="py-2 px-4 border-b">Name</th>
                         <th class="py-2 px-4 border-b">Email</th>
-                        <th class="py-2 px-4 border-b">Course Faculty 1</th>
-                        <th class="py-2 px-4 border-b">Course Faculty 2</th>
-                        <th class="py-2 px-4 border-b">Course Faculty 3</th>
-                        <th class="py-2 px-4 border-b">Course Faculty 4</th>
-                        <th class="py-2 px-4 border-b">Course Faculty 5</th>
+                        <th class="py-2 px-4 border-b">Data Structures</th>
+                        <th class="py-2 px-4 border-b">Discrete Mathematics</th>
+                        <th class="py-2 px-4 border-b">Object Oriented Programming</th>
+                        <th class="py-2 px-4 border-b">DataBase Management Systems</th>
+                        <th class="py-2 px-4 border-b">Computer Architecture</th>
+                        <th class="py-2 px-4 border-b">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,15 +46,21 @@
                             echo "<td class='py-2 px-4 border-b'>" . $row["student_rollno"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["student_name"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["student_mail_id"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["course_faculty_name1"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["course_faculty_name2"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["course_faculty_name3"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["course_faculty_name4"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["course_faculty_name5"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["ds"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["dm"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["oops"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["dbms"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["ca"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>
+                                    <button class='bg-red-500 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-red-700' 
+                                            onclick=\"confirmDelete('delete_student.php?rollno=" . $row["student_rollno"] . "')\">
+                                        Delete
+                                    </button>
+                                  </td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='8' class='py-2 px-4 text-center'>No records found</td></tr>";
+                        echo "<tr><td colspan='9' class='py-2 px-4 text-center'>No records found</td></tr>";
                     }
                     ?>
                 </tbody>
@@ -62,6 +69,15 @@
 
         <!-- Additional content can be added here if needed -->
     </div>
+
+    <!-- JavaScript for confirming deletion -->
+    <script>
+        function confirmDelete(url) {
+            if (confirm("Are you sure you want to delete this student?")) {
+                window.location.href = url;
+            }
+        }
+    </script>
 
 </body>
 </html>

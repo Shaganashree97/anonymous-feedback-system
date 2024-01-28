@@ -18,17 +18,18 @@
 
         <?php
         // Fetch faculty details from the database
-        $sql = "SELECT faculty_mail_id, faculty_name, faculty_course_handling, slot_number FROM faculty";
+        $sql = "SELECT faculty_mail_id, faculty_name, course_title, faculty_slot_number FROM faculty";
         $result = $conn->query($sql);
         ?>
 
         <!-- Display faculty details from the database -->
         <div class="overflow-x-auto">
-            <table class="min-w-full bg-white border border-gray-300">
+            <table class="min-w-full bg-white border border-gray-300 text-center">
                 <thead>
                     <tr>
-                        <th class="py-2 px-4 border-b">Mail ID</th>
                         <th class="py-2 px-4 border-b">Name</th>
+                        <th class="py-2 px-4 border-b">Mail ID</th>
+                        
                         <th class="py-2 px-4 border-b">Course Handling</th>
                         <th class="py-2 px-4 border-b">Slot Number</th>
                     </tr>
@@ -40,8 +41,8 @@
                             echo "<tr>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["faculty_mail_id"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["faculty_name"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["faculty_course_handling"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["slot_number"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["course_title"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["faculty_slot_number"] . "</td>";
                             echo "</tr>";
                         }
                     } else {
