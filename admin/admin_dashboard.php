@@ -1,5 +1,3 @@
-<!-- admin_dashboard.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +22,14 @@
 
             <!-- Dropdown menu for mobile view -->
             <div class="lg:hidden relative">
-                <button type="button" class="text-gray-700 hover:text-indigo-500 focus:outline-none">
+                <button type="button" class="text-gray-700 hover:text-indigo-500 focus:outline-none" id="mobileMenuButton">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
 
                 <!-- Dropdown menu items -->
-                <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden">
+                <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden" id="mobileMenu">
                     <a href="details_students.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Student Details</a>
                     <a href="details_faculties.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Faculty Details</a>
                     <a href="details_courses.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Course Details</a>
@@ -48,6 +46,14 @@
 
         <a href="admin_logout.php" class="text-indigo-500 hover:underline">Logout</a>
     </div>
+
+    <!-- JavaScript to toggle the mobile dropdown menu -->
+    <script>
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            var menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
