@@ -1,4 +1,8 @@
-<?php include_once '../conn.php'; ?>
+<?php 
+
+include_once '../conn.php'; 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +22,7 @@
 
         <?php
         // Fetch feedback details from the database
-        $sql = "SELECT student_rollno, student_name, course_title, course_faculty, feedback, feedback_response FROM feedback";
+        $sql = "SELECT feedback_id, student_rollno, student_name, course_title, faculty_name, feedback, timestamp FROM feedback";
         $result = $conn->query($sql);
         ?>
 
@@ -30,9 +34,9 @@
                         <th class="py-2 px-4 border-b">Student Roll No</th>
                         <th class="py-2 px-4 border-b">Student Name</th>
                         <th class="py-2 px-4 border-b">Course Title</th>
-                        <th class="py-2 px-4 border-b">Course Faculty</th>
+                        <th class="py-2 px-4 border-b">Faculty Name</th>
                         <th class="py-2 px-4 border-b">Feedback</th>
-                        <th class="py-2 px-4 border-b">Feedback Response</th>
+                        <th class="py-2 px-4 border-b">Timestamp</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,9 +47,9 @@
                             echo "<td class='py-2 px-4 border-b'>" . $row["student_rollno"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["student_name"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["course_title"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["course_faculty"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["faculty_name"] . "</td>";
                             echo "<td class='py-2 px-4 border-b'>" . $row["feedback"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b'>" . $row["feedback_response"] . "</td>";
+                            echo "<td class='py-2 px-4 border-b'>" . $row["timestamp"] . "</td>";
                             echo "</tr>";
                         }
                     } else {
